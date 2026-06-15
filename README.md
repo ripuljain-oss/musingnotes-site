@@ -2,18 +2,19 @@
 
 Marketing site for **Musing** — a context-aware AI notes app for creative minds.
 
-Static HTML/CSS, no build step.
+Static HTML/CSS, no build step. The site files live in `public/`.
 
-- `index.html` — landing page (features + pricing)
-- `privacy.html` — privacy policy (used as the App Store privacy URL: `https://musingnotes.app/privacy.html`)
-- `styles.css` — shared styles
-- `icon.png` — app icon (favicon + social preview)
+- `public/index.html` — landing page (features + pricing)
+- `public/privacy.html` — privacy policy (App Store privacy URL: `https://musingnotes.app/privacy.html`)
+- `public/styles.css` — shared styles
+- `public/icon.png` — app icon (favicon + social preview)
+- `wrangler.toml` — Cloudflare config; serves `public/` as static assets
 
-## Deploy with Cloudflare Pages
-1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**.
-2. Pick this repo. Framework preset: **None**. Build command: *(leave empty)*.
-   Build output directory: `/` (root).
-3. Deploy, then **Custom domains → Set up a custom domain → `musingnotes.app`**
-   (Cloudflare handles DNS automatically since the domain is on your account).
+## Auto-deploy (Cloudflare Workers Builds)
+The `musingnotes-site` Worker is connected to this repo. On every push to `main`,
+Cloudflare runs `npx wrangler deploy`, which reads `wrangler.toml` and publishes
+`public/` to `musingnotes.app`. No manual upload needed.
+
+To change the site: edit a file in `public/`, commit, and push to `main`.
 
 Support: support@musingnotes.app

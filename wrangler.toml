@@ -1,0 +1,8 @@
+name = "musingnotes-site"
+compatibility_date = "2026-06-15"
+
+# Static marketing site — no server-side Worker script, just assets.
+# Cloudflare's build runs `npx wrangler deploy`, which reads this file and
+# uploads everything in ./public as the site served at musingnotes.app.
+[assets]
+directory = "./public"
