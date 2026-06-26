@@ -58,19 +58,21 @@ a:hover { text-decoration: underline; }
   margin-top: 10px;
 }
 .hero p.lead {
-  max-width: 540px;
-  margin: 26px auto 0;
+  max-width: 560px;
+  margin: 24px auto 0;
   font-size: 19px;
   color: rgba(243, 234, 216, 0.82);
 }
+.hero p.lead strong { color: var(--gold-soft); font-weight: 600; }
 .badge {
   display: inline-block;
-  margin-top: 34px;
+  margin-top: 22px;
   padding: 11px 20px;
   border: 1px solid rgba(232, 200, 112, 0.45);
   border-radius: 100px;
   color: var(--gold-soft);
   font-size: 13px;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
