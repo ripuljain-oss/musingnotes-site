@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://musingnotes.app/sitemap.xml
