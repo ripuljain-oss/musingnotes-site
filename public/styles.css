@@ -254,3 +254,18 @@ footer .legal { margin-top: 26px; font-size: 12px; color: rgba(243,234,216,0.4);
 .doc ul { margin: 8px 0 8px 22px; }
 .doc li { padding: 4px 0; }
 .doc .back { display: inline-block; margin-bottom: 28px; font-size: 14px; }
+
+/* Journal / blog */
+.postlist { list-style: none; margin: 10px 0 0; padding: 0; }
+.postlist li { padding: 24px 0; border-top: 1px solid var(--line); }
+.postlist li:first-child { border-top: none; }
+.postlist a.title { font-family: var(--serif); font-size: 23px; font-weight: 500; color: var(--ink); }
+.postlist a.title:hover { color: var(--gold); text-decoration: none; }
+.postlist .date { color: var(--muted); font-size: 13px; margin-bottom: 6px; letter-spacing: 0.3px; }
+.postlist .excerpt { color: #322a20; margin-top: 8px; }
+.doc .lead-in { font-size: 19px; color: #322a20; margin: 0 0 6px; }
+.doc h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; margin: 28px 0 8px; }
+.doc blockquote { border-left: 3px solid var(--gold-soft); margin: 22px 0; padding: 6px 0 6px 18px; color: var(--muted); font-style: italic; }
+.doc .cta { margin-top: 44px; padding: 24px 26px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+.doc .cta p { margin: 0 0 14px; }
+.doc .cta .appstore-btn { margin: 0; }
