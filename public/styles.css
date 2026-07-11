@@ -11,9 +11,9 @@
   --espresso: #17130f;
   --espresso-2: #221c16;
   --cream: #f0ede8;
-  --display: "Spectral", Georgia, ui-serif, serif;
-  --body: "Newsreader", Georgia, ui-serif, serif;
-  --ui: "Space Grotesk", -apple-system, system-ui, sans-serif;
+  --display: "Lora", Georgia, ui-serif, serif;
+  --body: "Lora", Georgia, ui-serif, serif;
+  --ui: "Inter", -apple-system, system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,7 +46,7 @@ a:hover { text-decoration: underline; }
 
 h1, h2 {
   font-family: var(--display);
-  font-weight: 300;
+  font-weight: 400; /* Lora's lightest cut */
   line-height: 1.14;
   text-wrap: balance;
 }
