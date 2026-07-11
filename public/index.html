@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Musing — a creative second brain</title>
-  <meta name="description" content="Musing is a second brain for creative minds — a notes app that remembers everything and files nothing. Capture ideas instantly, never organize, find anything by asking, and pull in facts from the web with built-in Web Search. Powered by AI." />
+  <title>Musing — the most beautiful way to keep a thought</title>
+  <meta name="description" content="Musing is a notebook rebuilt as an object you can feel — pages that stack and leaf like paper, with an intelligence that finishes your notes for you. Capture a half-formed idea, find it later by asking." />
   <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Social preview -->
-  <meta property="og:title" content="Musing — a creative second brain" />
-  <meta property="og:description" content="A second brain you never have to file. Capture the spark, forget it, find it later just by asking — now with Web Search that pulls facts from the web right into your notes." />
+  <meta property="og:title" content="Musing — the most beautiful way to keep a thought" />
+  <meta property="og:description" content="A notebook rebuilt as an object you can feel, with an intelligence that finishes your notes for you. No folders. No tags. Just ask." />
   <meta property="og:image" content="icon.png" />
   <meta property="og:url" content="https://musingnotes.app" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -17,118 +20,67 @@
 <body>
 
   <header class="hero">
-    <img class="app-icon" src="icon.png" alt="Musing app icon" />
-    <div class="wordmark">Musing</div>
-    <div class="tagline">A second brain for creative minds</div>
-    <div class="badge">✦ AI-powered &nbsp;·&nbsp; Web Search &nbsp;·&nbsp; No subscription</div>
-    <p class="lead">A second brain that <strong>remembers everything and files nothing.</strong> Capture the spark — a fleeting line, a photo, a voice memo — then forget it. When you need it back, just ask in plain words, the way you'd ask your own memory.</p>
-    <a class="appstore-btn" href="https://apps.apple.com/us/app/musing-notes/id6777539170" aria-label="Download Musing on the App Store">
-      <svg class="appstore-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.03-2.7 2.2-4 2.3-4.06-1.25-1.83-3.2-2.08-3.9-2.11-1.66-.17-3.24.97-4.08.97-.84 0-2.14-.95-3.52-.92-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.72.9 1.29 1.97 2.74 3.38 2.69 1.35-.05 1.87-.87 3.5-.87 1.63 0 2.1.87 3.53.84 1.46-.03 2.38-1.32 3.27-2.62 1.03-1.5 1.46-2.95 1.48-3.03-.03-.01-2.84-1.09-2.87-4.32zM14.43 4.2c.74-.9 1.24-2.15 1.1-3.4-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.29 1.19.09 2.42-.6 3.16-1.5z"/></svg>
-      <span class="appstore-txt"><small>Download on the</small><strong>App Store</strong></span>
-    </a>
-    <p class="hero-link"><a href="blog/">Read the Journal &nbsp;→</a></p>
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <div class="wordmark">Musing</div>
+        <h1>The most beautiful way <br />to keep a thought.</h1>
+        <p class="lead">A notebook rebuilt as an object you can feel — pages that stack and leaf like paper — with an intelligence that quietly finishes your notes for you.</p>
+        <a class="appstore-btn" href="https://apps.apple.com/us/app/musing-notes/id6777539170" aria-label="Download Musing on the App Store">
+          <svg class="appstore-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.03-2.7 2.2-4 2.3-4.06-1.25-1.83-3.2-2.08-3.9-2.11-1.66-.17-3.24.97-4.08.97-.84 0-2.14-.95-3.52-.92-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.72.9 1.29 1.97 2.74 3.38 2.69 1.35-.05 1.87-.87 3.5-.87 1.63 0 2.1.87 3.53.84 1.46-.03 2.38-1.32 3.27-2.62 1.03-1.5 1.46-2.95 1.48-3.03-.03-.01-2.84-1.09-2.87-4.32zM14.43 4.2c.74-.9 1.24-2.15 1.1-3.4-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.29 1.19.09 2.42-.6 3.16-1.5z"/></svg>
+          <span class="appstore-txt"><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+        <p class="hero-note">Free to capture, forever. No subscription.</p>
+      </div>
+      <div class="hero-shot">
+        <div class="phone"><img src="shot-hero.jpg" width="760" height="1652" alt="Musing home screen — a warm stone page asking: what are you turning over?" /></div>
+      </div>
+    </div>
   </header>
 
-  <section class="concept">
+  <section class="beauty">
     <div class="wrap">
-      <h2 class="section-title">A second brain you never have to file</h2>
-      <p class="concept-lead">Most “second brain” apps quietly turn you into a librarian — folders, tags, backlinks, a system to maintain. Creatives don't want to file; they want to think. Musing throws all of that out. Capture the thought and let it go. When it matters again, just ask.</p>
-      <div class="concept-row">
-        <div>
-          <strong>Remembers everything</strong>
-          <span>Every idea, photo, and voice memo — held with the place, time, and moment it arrived.</span>
-        </div>
-        <div>
-          <strong>Files nothing</strong>
-          <span>No folders, no tags, no upkeep. The organizing happens invisibly, so you never do it.</span>
-        </div>
-        <div>
-          <strong>Recalls on demand</strong>
-          <span>Ask a question and Claude surfaces the note you mean — even when you've forgotten the words.</span>
-        </div>
+      <p class="kicker">An object, not an interface</p>
+      <h2>It reads like paper.</h2>
+      <p class="section-lead">There are no tab bars in Musing, and no back buttons. Every screen rises as a page above your notebook; pull down anywhere and it falls away, all the way home. Drag to leaf through your notes. Swipe up and the notebook spreads into a timeline of everything you've kept.</p>
+      <div class="shot-row">
+        <div class="phone"><img src="shot-deck.jpg" width="760" height="1652" alt="A paper deck of notes — drag to leaf, tap to open, swipe up to spread" loading="lazy" /></div>
+        <div class="phone"><img src="shot-spread.jpg" width="760" height="1652" alt="The notebook spread into a timeline — Today, Yesterday, colored page edges" loading="lazy" /></div>
       </div>
     </div>
   </section>
 
-  <section class="spotlight">
-    <div class="wrap spotlight-inner">
-      <div class="spotlight-text">
-        <span class="spotlight-tag">New</span>
-        <h2>Now your notes can look things up</h2>
-        <p>Flip on <strong>Web Search</strong> as you write, and Musing researches your note on the live web — it even reads a photo you snapped, like a book cover, and folds the real details right into the note, sources included.</p>
-        <ul class="spotlight-list">
-          <li>Snap a book cover, write “add details about this” — get the author, year, and facts back</li>
-          <li>Works from what you type, a photo, or both</li>
-          <li>The findings become part of the note — searchable and shareable</li>
-        </ul>
-        <p class="spotlight-note">Uses one AI search credit. Everyday notes stay free and unlimited.</p>
-      </div>
-      <div class="spotlight-shot">
-        <div class="phone">
-          <img src="ss-web-search.jpg" width="900" height="1381" alt="A note about a book, enriched by a From the web section with facts and source links" loading="lazy" />
+  <section class="intelligence">
+    <div class="wrap">
+      <p class="kicker">Quietly intelligent</p>
+      <h2>Notes that finish themselves.</h2>
+      <p class="section-lead">Type a fragment, speak it, or snap a photo — Musing cleans it up, reads the image, and can research the note on the live web, sources included. Write “remind me…” and a real Apple Reminder appears. You jot half a thought; Musing hands back something finished.</p>
+      <div class="shot-row">
+        <div class="phone"><img src="shot-web.jpg" width="760" height="1652" alt="A note about a book, completed by a From-the-web section with real details and sources" loading="lazy" /></div>
+        <div class="shot-caption">
+          <h3>Find anything by asking.</h3>
+          <p>No folders. No tags. Search the way you'd ask a friend — “that book Sarah recommended,” “the rainy café idea” — and Musing surfaces the note you mean, not just the words you typed. Every note quietly remembers where and when it happened, so a half-remembered moment stays findable.</p>
         </div>
+        <div class="phone"><img src="shot-ask.jpg" width="760" height="1652" alt="Ask in plain language — Musing returns the exact notes, ranked" loading="lazy" /></div>
       </div>
     </div>
   </section>
 
-  <section class="showcase">
-    <div class="wrap">
-      <h2 class="section-title">A look inside</h2>
-      <p class="section-sub">Capture in a tap, find by asking, and a quiet record of where each note happened.</p>
-      <div class="shots">
-        <img src="ss-1-capture.jpg" width="900" height="1951" alt="Musing home screen — capture a thought, find it later" loading="lazy" />
-        <img src="ss-2-photos.jpg" width="900" height="1951" alt="Notes with photos shown right on the cards" loading="lazy" />
-        <img src="ss-3-search.jpg" width="900" height="1951" alt="Ask in plain language and Claude finds the note you mean" loading="lazy" />
-        <img src="ss-4-context.jpg" width="900" height="1951" alt="Every note remembers where and when it happened, with a map" loading="lazy" />
-        <img src="ss-5-ways.jpg" width="900" height="1951" alt="Write, speak, or snap a photo to capture a note" loading="lazy" />
-        <img src="ss-6-private.jpg" width="900" height="1951" alt="Private by design — stored on your device, never used to train AI" loading="lazy" />
+  <section class="dark-band">
+    <div class="wrap dark-inner">
+      <div class="dark-text">
+        <p class="kicker">Two moods</p>
+        <h2>Stone by day. <br />Espresso by night.</h2>
+        <p>Warm stone light, deep espresso dark — typography set in Spectral and Newsreader, made to be read. Every detail of Musing was drawn before it was coded.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap">
-      <h2 class="section-title">A brain built for the way ideas actually arrive</h2>
-      <p class="section-sub">Messy, mid-sentence, at the worst possible moment. Musing catches them, holds the context, and gives them back the instant you ask.</p>
-      <div class="grid">
-        <div class="card">
-          <div class="dot">✶</div>
-          <h3>Capture anything, instantly</h3>
-          <p>Type, talk, or snap a photo. Voice notes keep the actual audio, not just the transcript — and the cleanup keeps your voice, so a half-formed line stays a half-formed line.</p>
-        </div>
-        <div class="card">
-          <div class="dot">⌕</div>
-          <h3>Never organize again</h3>
-          <p>No folders, no tags, no sorting. Every note quietly remembers its context at capture — place, time, weather — so you find things later by simply asking.</p>
-        </div>
-        <div class="card">
-          <div class="dot">✷</div>
-          <h3>Find it by asking</h3>
-          <p>“What was that café idea when it was raining?” Ask in plain language and Claude finds the notes that match — ranked by relevance, even when you don’t recall the exact words.</p>
-        </div>
-        <div class="card">
-          <div class="dot">❖</div>
-          <h3>Reads your photos</h3>
-          <p>Attach an image and Claude reads the text and names what’s in it — a plant, a landmark, a dish — folded right into the note, and fully searchable.</p>
-        </div>
-        <div class="card">
-          <div class="dot">⚡</div>
-          <h3>Capture from anywhere</h3>
-          <p>A Home Screen widget, three Siri phrases, the Shortcuts app, and the share sheet — so a thought is never more than a tap or a word away.</p>
-        </div>
-        <div class="card">
-          <div class="dot">⛨</div>
-          <h3>Private by design</h3>
-          <p>Notes are stored on your device and backed up to your private iCloud. AI runs through Anthropic’s Claude. Nothing is ever sold, and nothing is used to train models.</p>
-        </div>
-      </div>
+      <div class="phone"><img src="shot-dark.jpg" width="760" height="1652" alt="Musing in espresso dark mode" loading="lazy" /></div>
     </div>
   </section>
 
   <section class="pricing" id="pricing">
     <div class="wrap">
-      <h2 class="section-title">No subscription</h2>
-      <p class="section-sub">Capturing notes is always free and unlimited. You only pay for AI search — and only if you want more. Buy once; credits never expire.</p>
+      <p class="kicker">Fair by design</p>
+      <h2>No subscription.</h2>
+      <p class="section-lead">Capturing notes is free and unlimited, forever. Everyone gets 15 AI searches a month. Want more? Buy a one-time credit pack — credits never expire.</p>
       <div class="plans">
         <div class="plan">
           <div class="name">Free</div>
@@ -158,7 +110,17 @@
           </ul>
         </div>
       </div>
-      <p class="note">Credit packs are one-time purchases billed through the App Store — no subscription, no recurring charges, ever. Credits don't expire.</p>
+      <p class="note">Credit packs are one-time purchases billed through the App Store — no recurring charges, ever. Your notes live on your device and back up to your private iCloud; nothing you write is ever used to train AI models.</p>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Capture a half-formed idea.<br />Find it later. That's Musing.</h2>
+      <a class="appstore-btn" href="https://apps.apple.com/us/app/musing-notes/id6777539170" aria-label="Download Musing on the App Store">
+        <svg class="appstore-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.03-2.7 2.2-4 2.3-4.06-1.25-1.83-3.2-2.08-3.9-2.11-1.66-.17-3.24.97-4.08.97-.84 0-2.14-.95-3.52-.92-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.72.9 1.29 1.97 2.74 3.38 2.69 1.35-.05 1.87-.87 3.5-.87 1.63 0 2.1.87 3.53.84 1.46-.03 2.38-1.32 3.27-2.62 1.03-1.5 1.46-2.95 1.48-3.03-.03-.01-2.84-1.09-2.87-4.32zM14.43 4.2c.74-.9 1.24-2.15 1.1-3.4-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.29 1.19.09 2.42-.6 3.16-1.5z"/></svg>
+        <span class="appstore-txt"><small>Download on the</small><strong>App Store</strong></span>
+      </a>
     </div>
   </section>
 
