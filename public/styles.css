@@ -12,7 +12,7 @@
   --espresso-2: #221c16;
   --cream: #f0ede8;
   --display: "Inter", -apple-system, system-ui, sans-serif;
-  --body: "Lora", Georgia, ui-serif, serif;
+  --body: "Inter", -apple-system, system-ui, sans-serif;
   --ui: "Inter", -apple-system, system-ui, sans-serif;
 }
 
@@ -24,8 +24,8 @@ body {
   font-family: var(--body);
   color: var(--ink);
   background: var(--stone);
-  line-height: 1.65;
-  font-size: 19px;
+  line-height: 1.55; /* Inter body reads tighter than the old serif */
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
 }
 
