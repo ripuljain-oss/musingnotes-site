@@ -119,7 +119,7 @@ h1, h2 {
 .phone img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 30px; }
 /* Grid children default to min-width:auto — a 760px-intrinsic phone image would
    blow the column out past the viewport on mobile without this. */
-.hero-inner > *, .dark-inner > *, .shot-row > * { min-width: 0; }
+.hero-inner > *, .shot-row > * { min-width: 0; }
 
 /* ---------- Sections ---------- */
 section { padding: 104px 0; }
@@ -130,8 +130,21 @@ section h2 { font-size: clamp(34px, 4.4vw, 52px); margin-bottom: 20px; }
   max-width: 42em;
   margin-bottom: 56px;
 }
+/* Marginalia aside — echoes the "why it matched" line the app writes beside a result. */
+.section-note {
+  font-size: 16.5px;
+  color: var(--muted);
+  max-width: 34em;
+  margin-top: 20px;
+  padding-left: 16px;
+  border-left: 2px solid var(--bronze);
+}
 
-.beauty { background: var(--paper); }
+/* Three hero use cases: polish → gathered → ask. Alternate paper/stone so the
+   seams read; pricing picks the alternation back up on stone. */
+.polish { background: var(--paper); }
+.gathered { background: var(--stone); }
+.ask { background: var(--paper); }
 
 .shot-row {
   display: grid;
@@ -139,39 +152,26 @@ section h2 { font-size: clamp(34px, 4.4vw, 52px); margin-bottom: 20px; }
   gap: 40px;
   align-items: center;
 }
-.shot-caption h3 {
-  font-family: var(--display);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  font-size: 30px;
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.shot-caption p { color: var(--muted); font-size: 18px; }
-
-.intelligence { background: var(--stone); }
-
-.boards { background: var(--paper); }
-
-.structured { background: var(--stone); }
-
-/* ---------- Dark band ---------- */
-.dark-band {
-  background: radial-gradient(120% 130% at 25% 10%, var(--espresso-2) 0%, var(--espresso) 65%);
-  color: var(--cream);
-}
-.dark-band .kicker { color: var(--gold); }
-.dark-inner {
+/* Copy beside a single phone. A lone centred phone strands in the 1080px wrap;
+   the split fills the width and lets sections 2/3 mirror each other. */
+.split {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 56px;
+  grid-template-columns: 1fr 0.72fr;
+  gap: 64px;
   align-items: center;
 }
-.dark-text p:not(.kicker) { color: rgba(240, 237, 232, 0.66); font-size: 20px; max-width: 30em; }
-.dark-text h2 { margin-bottom: 18px; }
+.split > * { min-width: 0; }
+/* width:100% + auto margins, never justify-self:center — that shrink-to-fits the
+   item, and a lazy `img` at width:100% then resolves circularly to zero. */
+.split .phone { max-width: 320px; width: 100%; margin: 0 auto; }
+.split .section-lead { margin-bottom: 0; }
+/* `order` moves the text right but not the track widths — swap those too, or the
+   copy lands in the narrow column. */
+.split.reverse { grid-template-columns: 0.72fr 1fr; }
+.split.reverse .split-text { order: 2; }
 
 /* ---------- Pricing ---------- */
-.pricing { background: var(--paper); text-align: center; }
+.pricing { background: var(--stone); text-align: center; }
 .pricing .section-lead { margin-left: auto; margin-right: auto; }
 .plans {
   display: grid;
@@ -182,7 +182,7 @@ section h2 { font-size: clamp(34px, 4.4vw, 52px); margin-bottom: 20px; }
   text-align: left;
 }
 .plan {
-  background: var(--stone);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 26px 24px;
@@ -256,16 +256,29 @@ footer p { margin: 4px 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
-  .hero-inner, .dark-inner { grid-template-columns: 1fr; }
+  /* `.split.reverse` sets its own tracks at (0,2,0); a media query adds no
+     specificity, so it must be re-listed here or it stays two-column and
+     overflows the viewport. */
+  .hero-inner, .split, .split.reverse { grid-template-columns: 1fr; }
+  /* Text always leads the phone once stacked, so `reverse` must not apply. */
+  .split.reverse .split-text { order: 0; }
+  .split { gap: 32px; text-align: center; }
+  .split .section-lead { margin-left: auto; margin-right: auto; }
+  /* A left rule reads as a stray line once the column is centred. */
+  .section-note {
+    border-left: none;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
   .hero { padding-top: 56px; text-align: center; }
   .hero h1 { font-size: clamp(32px, 9vw, 44px); }
-  .hero h1 br, .dark-text h2 br { display: none; }
+  .hero h1 br, .closing h2 br { display: none; }
   .hero .lead { margin-left: auto; margin-right: auto; }
   .hero-shot { max-width: 340px; margin: 24px auto 0; }
   .hero-shot .phone { margin-bottom: -18vw; }
-  .dark-inner .phone { max-width: 340px; margin: 0 auto; }
   section { padding: 72px 0; }
   .shot-row { gap: 28px; }
   .shot-row .phone { max-width: 340px; margin: 0 auto; }
-  .shot-caption { text-align: center; }
 }
