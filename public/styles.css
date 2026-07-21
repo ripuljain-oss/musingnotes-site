@@ -55,13 +55,13 @@ h1, h2 {
 /* ---------- Hero ---------- */
 .hero {
   background: linear-gradient(180deg, var(--stone) 0%, var(--stone-deep) 100%);
-  padding: 84px 0 0;
+  padding: 84px 0 72px;
   overflow: hidden;
 }
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 56px;
   align-items: center;
 }
 .wordmark {
@@ -87,8 +87,12 @@ h1, h2 {
   color: var(--muted);
   margin-top: 14px;
 }
-.hero-shot { align-self: end; }
-.hero-shot .phone { margin-bottom: -12vw; }
+/* Centred and capped — a full-column phone dominates the hero; ~290px keeps it a
+   companion to the text, not the headline. No bottom bleed either: the capture
+   card sits at the very bottom of the screenshot, so a negative margin would clip
+   the type · speak · check-in verbs. */
+.hero-shot { align-self: center; }
+.hero-shot .phone { max-width: 290px; width: 100%; margin: 0 auto; }
 
 /* ---------- App Store button ---------- */
 .appstore-btn {
@@ -119,113 +123,56 @@ h1, h2 {
 .phone img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 30px; }
 /* Grid children default to min-width:auto — a 760px-intrinsic phone image would
    blow the column out past the viewport on mobile without this. */
-.hero-inner > *, .shot-row > * { min-width: 0; }
+.hero-inner > * { min-width: 0; }
 
-/* ---------- Sections ---------- */
-section { padding: 104px 0; }
-section h2 { font-size: clamp(34px, 4.4vw, 52px); margin-bottom: 20px; }
-.section-lead {
-  font-size: 20px;
-  color: var(--muted);
-  max-width: 42em;
-  margin-bottom: 56px;
-}
-/* Marginalia aside — echoes the "why it matched" line the app writes beside a result. */
-.section-note {
-  font-size: 16.5px;
-  color: var(--muted);
-  max-width: 34em;
-  margin-top: 20px;
-  padding-left: 16px;
-  border-left: 2px solid var(--bronze);
-}
-
-/* Three hero use cases: polish → gathered → ask. Alternate paper/stone so the
-   seams read; pricing picks the alternation back up on stone. */
-.polish { background: var(--paper); }
-.gathered { background: var(--stone); }
-.ask { background: var(--paper); }
-
-.shot-row {
+/* ---------- Feature grid (the whole story, one screen) ---------- */
+.features { background: var(--paper); padding: 88px 0; }
+.features-head { text-align: center; margin-bottom: 48px; }
+.features-head h2 { font-size: clamp(30px, 3.8vw, 44px); }
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  align-items: center;
-}
-/* Copy beside a single phone. A lone centred phone strands in the 1080px wrap;
-   the split fills the width and lets sections 2/3 mirror each other. */
-.split {
-  display: grid;
-  grid-template-columns: 1fr 0.72fr;
-  gap: 64px;
-  align-items: center;
-}
-.split > * { min-width: 0; }
-/* width:100% + auto margins, never justify-self:center — that shrink-to-fits the
-   item, and a lazy `img` at width:100% then resolves circularly to zero. */
-.split .phone { max-width: 320px; width: 100%; margin: 0 auto; }
-.split .section-lead { margin-bottom: 0; }
-/* `order` moves the text right but not the track widths — swap those too, or the
-   copy lands in the narrow column. */
-.split.reverse { grid-template-columns: 0.72fr 1fr; }
-.split.reverse .split-text { order: 2; }
-
-/* ---------- Pricing ---------- */
-.pricing { background: var(--stone); text-align: center; }
-.pricing .section-lead { margin-left: auto; margin-right: auto; }
-.plans {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 880px;
-  margin: 0 auto 28px;
-  text-align: left;
-}
-/* Four one-time tiers: one row on desktop, 2×2 on tablet, stacked on phone. */
-.plans-4 {
-  max-width: 1000px;
-  grid-template-columns: repeat(4, 1fr);
-}
-@media (max-width: 940px) {
-  .plans-4 { grid-template-columns: repeat(2, 1fr); max-width: 620px; }
-}
-@media (max-width: 560px) {
-  .plans-4 { grid-template-columns: 1fr; max-width: 380px; }
-}
-.plan {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 26px 24px;
-}
-.plan.featured { border-color: var(--bronze); box-shadow: 0 14px 40px rgba(146, 110, 50, 0.14); }
-.plan .name {
-  font-family: var(--ui);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--bronze);
-  margin-bottom: 6px;
-}
-.plan .price { font-family: var(--display); font-size: 34px; margin-bottom: 12px; }
-.plan .price span { font-family: var(--ui); font-size: 13px; color: var(--muted); }
-.plan ul { list-style: none; }
-.plan li { padding: 5px 0; font-size: 16.5px; color: var(--muted); }
-.pricing .note {
-  font-size: 15px;
-  color: var(--muted);
-  max-width: 46em;
+  max-width: 900px;
   margin: 0 auto;
 }
-
-/* ---------- Closing ---------- */
-.closing {
-  background: var(--stone-deep);
-  text-align: center;
-  padding: 96px 0;
+.feature {
+  background: var(--stone);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px 28px;
 }
-.closing h2 { margin-bottom: 32px; }
+.ficon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 16px;
+  color: var(--bronze);
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.feature h3 {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.feature p { font-size: 16px; color: var(--muted); }
+
+/* ---------- Pricing + CTA, one slim strip ---------- */
+.cta-strip { background: var(--stone); text-align: center; padding: 76px 0; }
+.price-line {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 40em;
+  margin: 0 auto 30px;
+}
+.price-line strong { color: var(--ink); font-weight: 600; }
 
 /* ---------- Footer ---------- */
 footer {
@@ -267,29 +214,13 @@ footer p { margin: 4px 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
-  /* `.split.reverse` sets its own tracks at (0,2,0); a media query adds no
-     specificity, so it must be re-listed here or it stays two-column and
-     overflows the viewport. */
-  .hero-inner, .split, .split.reverse { grid-template-columns: 1fr; }
-  /* Text always leads the phone once stacked, so `reverse` must not apply. */
-  .split.reverse .split-text { order: 0; }
-  .split { gap: 32px; text-align: center; }
-  .split .section-lead { margin-left: auto; margin-right: auto; }
-  /* A left rule reads as a stray line once the column is centred. */
-  .section-note {
-    border-left: none;
-    padding-left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
+  .hero-inner { grid-template-columns: 1fr; }
   .hero { padding-top: 56px; text-align: center; }
   .hero h1 { font-size: clamp(32px, 9vw, 44px); }
-  .hero h1 br, .closing h2 br { display: none; }
+  .hero h1 br { display: none; }
   .hero .lead { margin-left: auto; margin-right: auto; }
   .hero-shot { max-width: 340px; margin: 24px auto 0; }
-  .hero-shot .phone { margin-bottom: -18vw; }
-  section { padding: 72px 0; }
-  .shot-row { gap: 28px; }
-  .shot-row .phone { max-width: 340px; margin: 0 auto; }
+  .feature-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .features, .cta-strip { padding: 56px 0; }
+  .features-head { margin-bottom: 32px; }
 }
