@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="foolscap">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Journal — Musing</title>
   <meta name="description" content="Notes on noticing, remembering, and thinking on paper — from the makers of Musing, the notes app that files nothing and finds anything." />
   <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400;1,14..32,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <meta property="og:title" content="The Musing Journal" />
   <meta property="og:description" content="Notes on noticing, remembering, and thinking on paper." />
-  <meta property="og:image" content="/icon.png" />
+  <meta property="og:image" content="https://musingnotes.app/og-card.png" />
   <meta property="og:url" content="https://musingnotes.app/blog/" />
+  <script>
+    try {
+      var t = localStorage.getItem("musing-theme");
+      if (t && /^(foolscap|inkwell|verdant|dusk|harbor)$/.test(t)) {
+        document.documentElement.dataset.theme = t;
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
+  <div class="doc-top">
+    <a class="wordmark" href="/">Musing</a>
+    <div class="picker" role="tablist" aria-label="Choose a theme">
+      <button type="button" class="swatch active" data-set="foolscap" aria-pressed="true"><span class="trio" aria-hidden="true"><i style="background:#17130F"></i><i style="background:#F3ECE0"></i><i style="background:#E8C870"></i></span><span class="name">Foolscap</span></button>
+      <button type="button" class="swatch" data-set="inkwell" aria-pressed="false"><span class="trio" aria-hidden="true"><i style="background:#14161B"></i><i style="background:#EDEFF2"></i><i style="background:#96A8DC"></i></span><span class="name">Inkwell</span></button>
+      <button type="button" class="swatch" data-set="verdant" aria-pressed="false"><span class="trio" aria-hidden="true"><i style="background:#111710"></i><i style="background:#F0F2E6"></i><i style="background:#D89A5E"></i></span><span class="name">Verdant</span></button>
+      <button type="button" class="swatch" data-set="dusk" aria-pressed="false"><span class="trio" aria-hidden="true"><i style="background:#181218"></i><i style="background:#F6EEEF"></i><i style="background:#D6A08A"></i></span><span class="name">Dusk</span></button>
+      <button type="button" class="swatch" data-set="harbor" aria-pressed="false"><span class="trio" aria-hidden="true"><i style="background:#0F1517"></i><i style="background:#EDF2F2"></i><i style="background:#7AB0A8"></i></span><span class="name">Harbor</span></button>
+    </div>
+  </div>
+
   <article class="doc">
-    <a class="back" href="/">← Musing</a>
+    <a class="back" href="/">← Home</a>
     <h1>Journal</h1>
     <p class="updated">Notes on noticing, remembering, and thinking on paper.</p>
 
@@ -47,11 +69,16 @@
     </ul>
   </article>
 
-  <footer>
-    <div class="wordmark">Musing</div>
-    <p>Questions? <a href="mailto:support@musingnotes.app">support@musingnotes.app</a></p>
-    <p><a href="/">Home</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
-    <p class="legal">© 2026 Musing. All rights reserved.</p>
+  <footer class="doc-footer">
+    <span>© 2026 Musing</span>
+    <span>
+      <a href="mailto:support@musingnotes.app">Support</a> &nbsp;·&nbsp;
+      <a href="/blog/">Blog</a> &nbsp;·&nbsp;
+      <a href="/privacy.html">Privacy</a>
+    </span>
   </footer>
+
+  <script src="/theme.js"></script>
+
 </body>
 </html>

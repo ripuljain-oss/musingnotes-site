@@ -6,7 +6,8 @@ Static HTML/CSS, no build step. The site files live in `public/`.
 
 - `public/index.html` — landing page (features + pricing)
 - `public/privacy.html` — privacy policy (App Store privacy URL: `https://musingnotes.app/privacy.html`)
-- `public/styles.css` — shared styles
+- `public/styles.css` — shared styles + five-room theme tokens (AppColors)
+- `public/theme.js` — theme picker, shelf render, localStorage persistence
 - `public/icon.png` — app icon (favicon + social preview)
 - `wrangler.toml` — Cloudflare config; serves `public/` as static assets
 
