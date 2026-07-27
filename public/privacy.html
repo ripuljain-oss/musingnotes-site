@@ -34,31 +34,25 @@
   <article class="doc">
     <a class="back" href="/">← Home</a>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 21, 2026</p>
+    <p class="updated">Last updated: July 27, 2026</p>
 
     <p>Musing (“the app,” “we,” “us”) is a note-taking app. This policy explains what
     information the app handles and why. The short version: your notes live on your
-    device, the AI features send what they need to process to Anthropic, and we never
-    sell your data or use it to train models.</p>
+    device, the intelligence runs on your device, and we never see, sell, or train on
+    your data — we don’t collect it at all.</p>
 
     <h2>Notes stay on your device</h2>
     <p>The notes you create — your text, transcripts, photos, and the context captured
     with them — are stored locally on your device. If you enable iCloud, Apple syncs
-    that data across your own devices under your Apple account; we never receive a copy.</p>
+    that data across your own devices under your Apple account, in your private iCloud
+    database; we never receive a copy and cannot read it.</p>
 
-    <h2>What the AI features process</h2>
-    <p>Musing’s AI features (search, “ask your notes,” note enhancement, and hidden
-    tagging) are powered by Anthropic’s Claude. To provide them, the relevant
-    content is sent — over an encrypted connection, through our own secure relay — to
-    Anthropic for processing:</p>
-    <ul>
-      <li>The text of the note or query involved in the request</li>
-      <li>Photos you attach (so the AI can read and describe them)</li>
-      <li>Lightweight context such as approximate location, time, and weather, used to make results more relevant</li>
-    </ul>
-    <p>Anthropic processes this to return a result and does not use data submitted
-    through the API to train its models. We do not store your note content on our own
-    servers; our relay simply forwards requests and adds no logging of your content.</p>
+    <h2>Intelligence runs on your device</h2>
+    <p>As of Musing 4.0, every intelligent feature — search, “ask your notes,” reading
+    text in photos, understanding what a note is, and hidden tagging — runs entirely on
+    your iPhone, using Apple Intelligence and Apple’s on-device frameworks. No note
+    text, photo, or query is ever sent to our servers or to any third party. These
+    features work in airplane mode.</p>
 
     <h2>Saving links from other apps</h2>
     <p>When you save a link to Musing — for example, by sharing a webpage from Safari —
@@ -68,9 +62,10 @@
     is stored with your note on your device.</p>
 
     <h2>Location &amp; weather</h2>
-    <p>If you allow location access, Musing uses your location to tag where a note was
-    made and to fetch local weather via Apple WeatherKit. You can turn any context
-    signal off at any time in the app’s Settings.</p>
+    <p>If you allow location access, Musing uses your location on-device to tag where a
+    note was made, and to fetch local weather via Apple WeatherKit (a request handled
+    by Apple, not us). Sensitive places — clinics, hospitals, places of worship — are
+    never named. You can turn any context signal off at any time in Settings.</p>
 
     <h2>Voice</h2>
     <p>Voice notes are transcribed on your device using Apple’s on-device speech
@@ -78,17 +73,24 @@
 
     <h2>What we don’t do</h2>
     <ul>
-      <li>We do not track you across apps or websites.</li>
-      <li>We do not show ads or use advertising identifiers.</li>
+      <li>We do not collect, store, or have access to your notes or personal data.</li>
+      <li>We do not track you across apps or websites, and we show no ads.</li>
       <li>We do not sell or share your personal data.</li>
       <li>Your data is never used to train any AI model.</li>
     </ul>
 
-    <h2>Purchases</h2>
-    <p>Musing is free to start, with a set number of notes and searches included. If you
-    need more, you can buy a one-time unlock — a larger limit, or unlimited — as a single
-    purchase, never a subscription. Purchases are handled by Apple through the App Store;
-    we never see your payment details.</p>
+    <h2>Price</h2>
+    <p>Musing is free — no ads, no account, no subscription, no credits. If you bought
+    a one-time unlock in an earlier version, thank you; everything those unlocks
+    provided is now included for everyone, and your purchase remains on your Apple
+    account.</p>
+
+    <h2>Earlier versions</h2>
+    <p>Versions of Musing before 4.0 processed AI requests (search, ask, note
+    enhancement) by sending the relevant note text and photos, over an encrypted
+    connection, to Anthropic’s Claude API, which does not train on data submitted
+    through the API. If you are still on an earlier version, that behavior applies
+    until you update. Version 4.0 and later send nothing.</p>
 
     <h2>Keeping &amp; deleting your data</h2>
     <p>Because notes are stored on your device, you control them: delete a note in the
