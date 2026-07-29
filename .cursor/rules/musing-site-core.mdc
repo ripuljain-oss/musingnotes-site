@@ -1,0 +1,48 @@
+---
+description: Musing marketing site — structure, deploy pipeline, and the three-repo ecosystem
+alwaysApply: true
+---
+
+# musingnotes.app — Marketing Site
+
+Static marketing site for **Musing**, a context-aware on-device notes app. Plain HTML/CSS/JS: **no build step, no framework, no npm dependencies.** Everything served is a file in `public/`.
+
+## Sibling Repos
+
+| Repo | Path | Purpose |
+|------|------|---------|
+| **This site** | `~/Cursor/musingnotes-site` | musingnotes.app |
+| **iOS app** | `~/Cursor/AmbientNotes` | iPhone + Watch + widgets |
+| **Mac app** | `~/Cursor/Musing-Mac` | Native macOS (worktree of the iOS repo, branch `mac-app`) |
+
+The app repos are the source of truth for design tokens and privacy claims. When site copy and app behavior disagree, **the app wins** — fix the site.
+
+## Layout
+
+```
+public/
+├── index.html          landing page
+├── privacy.html        the App Store privacy URL — /privacy.html
+├── styles.css          all styles + five-room theme tokens
+├── theme.js            theme picker, shelf render, localStorage
+├── blog/               index.html + one .html per post
+├── mockups/            design explorations, not linked from the live site
+├── shot-*.jpg          app screenshots used in sections
+├── icon.png            favicon + apple-touch-icon
+├── og-card.png         social preview, exactly 1200×630
+├── sitemap.xml, robots.txt
+└── (repo root) wrangler.toml — [assets] directory = "./public"
+```
+
+## Deploy
+
+Cloudflare Workers Builds is connected to this repo. **Pushing to `main` auto-deploys** — Cloudflare runs `npx wrangler deploy`, which reads `wrangler.toml` and publishes `public/`. There is no manual upload and no staging environment, so `main` is production.
+
+To change the site: edit a file in `public/`, commit, push to `main`.
+
+## Key Facts
+
+- **App Store:** `https://apps.apple.com/us/app/musing-notes/id6777539170`
+- **Support:** support@musingnotes.app
+- **Font:** Inter via Google Fonts — preconnect both `fonts.googleapis.com` and `fonts.gstatic.com`
+- Blog URLs are **extensionless** in links and `sitemap.xml` (`/blog/why-folders-kill-your-ideas`) while the files are `.html`. Cloudflare's asset handler resolves this — don't "fix" the links by adding `.html`.

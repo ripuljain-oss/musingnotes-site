@@ -1,0 +1,43 @@
+---
+description: Five-room theme system — token values, the two places they live, and app parity
+globs: "public/**/*.css,public/**/*.js,public/**/*.html"
+alwaysApply: false
+---
+
+# The Five Rooms
+
+The site mirrors the app's theme system. `foolscap` is the default and the fallback for any unrecognized value.
+
+| Room | Mood | Dark bg | Accent |
+|------|------|---------|--------|
+| `foolscap` | espresso & gold | `#17130F` | `#E8C870` |
+| `inkwell` | graphite & indigo | `#14161B` | `#96A8DC` |
+| `verdant` | spruce & copper | `#111710` | `#D89A5E` |
+| `dusk` | mulberry & rose | `#181218` | `#D6A08A` |
+| `harbor` | sea slate & foam | `#0F1517` | `#7AB0A8` |
+
+## Tokens Live in Two Places — Update Both, Every Time
+
+1. `styles.css` — one `html[data-theme="<room>"]` block per room, plus a `:root` Foolscap fallback
+2. `theme.js` — the `ROOMS` array, which drives the shelf previews and picker swatches
+
+Changing a color in one and not the other silently desyncs the preview from the page it previews.
+
+Values are copied from the app's `AppColors.swift` / `AppTheme.swatch`. The convention: **page ground = the room's LIGHT mode; phone mockups = the room's DARK mode** — hence the parallel `--d-*` tokens in every block.
+
+## Mechanics
+
+- Applied as `data-theme` on `<html>`, persisted in `localStorage` under `musing-theme`
+- Every page carries an **inline `<head>` script** that reads localStorage and sets `data-theme` before first paint. Omit it and the page flashes Foolscap before correcting.
+- The room regex is duplicated into that inline script on every page: `/^(foolscap|inkwell|verdant|dusk|harbor)$/`. Adding a room means updating it on **every** page plus both files above.
+- `theme.js` exposes `window.MusingTheme = { ROOMS, setTheme, storedTheme }`
+
+## Adding a Page
+
+Include the inline theme script, `/styles.css`, `/theme.js`, and the `.picker` swatch markup (or `.doc-top` for document-style pages). Use root-relative paths — `index.html` uses bare `styles.css` only because it sits at the root.
+
+## Gotchas
+
+- Use CSS custom properties for color. Hardcoded hex outside the theme blocks won't transition when the room changes (`background`/`color` transitions run at `.5s ease`).
+- `setTheme` maintains `aria-pressed` on swatches and the `.active` class on swatches and minis — don't hand-manage either.
+- Parenthesize a template string before `.repeat()`; string-concat vs. repeat precedence has already caused one bug in `renderShelf`.

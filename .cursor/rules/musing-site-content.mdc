@@ -1,0 +1,47 @@
+---
+description: Site copy discipline — privacy claims must match app reality, plus blog and SEO conventions
+globs: "public/**/*.html"
+alwaysApply: false
+---
+
+# Copy, Claims & Content
+
+## Privacy Claims Are Load-Bearing
+
+The App Store privacy label is published as **"Data Not Collected"**, and `/privacy.html` is the privacy URL on the App Store listing. Site copy is a compliance surface, not just marketing. Every claim must be true of the shipping app:
+
+- Free — no ads, no account, no subscription, no credits (all IAP removed from sale as of 4.0)
+- Notes never leave the device except to sync through the user's own private iCloud
+- Search, answers, and understanding run on-device with Apple Intelligence
+- Every context signal has an off switch
+
+**Never add a claim the app doesn't back.** If a feature changes what leaves the device, `/privacy.html` and the `#privacy` section on the landing page change in the same commit.
+
+One distinction to keep straight: **Pro Mode** (bring-your-own-key web search, opt-in, off by default) is the single path that sends note text and photos off-device, and only on an explicit user action. It is not the same as capture-time understanding, which is always on-device. Don't blur the two in copy.
+
+## Positioning
+
+- "A notebook, not a database" — no folders, no tags to manage, no sorting
+- Retrieval by memory: "coffee shop notes," "rainy day ideas," "notes from Traverse City"
+- Calm and emptiness are the point. Don't write dashboard or productivity-tool copy.
+
+## Platform Copy — Check Before Propagating
+
+Current copy says "on your iPhone" throughout — hero, `.fine` line, `#privacy`, meta descriptions, and og tags. **A native Mac app now ships**, so any edit touching those lines should reconsider the iPhone-only phrasing rather than copying it forward.
+
+## Adding a Blog Post
+
+Create `public/blog/<slug>.html`, then three updates or the post is orphaned:
+
+1. A `<li>` in `public/blog/index.html` → `.postlist`, with `.date`, `.title` link, and `.excerpt`
+2. A `<url>` entry in `public/sitemap.xml` with `<lastmod>` and `<priority>0.7</priority>`
+3. The post's own `<title>`, `meta description`, and og tags
+
+Link to posts **extensionless**: `/blog/<slug>`, never `/blog/<slug>.html`.
+
+## Per-Page Requirements
+
+- `<title>` suffixed `— Musing`, plus a real `meta name="description"`
+- Open Graph: `og:title`, `og:description`, `og:image` (absolute `https://musingnotes.app/og-card.png`), `og:url`
+- `<html lang="en" data-theme="foolscap">`
+- Decorative glyphs (`⚙`, `◉`, `︿`, dot spans) get `aria-hidden="true"`; interactive swatches keep `aria-pressed` and `role="tablist"` on the picker
