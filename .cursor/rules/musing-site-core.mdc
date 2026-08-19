@@ -28,7 +28,9 @@ public/
 ├── blog/               index.html + one .html per post
 ├── mockups/            design explorations, not linked from the live site
 ├── shot-*.jpg          app screenshots used in sections
-├── icon.png            favicon + apple-touch-icon
+├── icon.png            1024 app-icon master (not used as rel=icon)
+├── apple-touch-icon.png  180×180
+├── favicon.ico         16/32/48 ICO
 ├── og-card.png         social preview, exactly 1200×630
 ├── sitemap.xml, robots.txt, llms.txt
 └── (repo root) wrangler.toml — assets in ./public + src/worker.js for canonical redirects
