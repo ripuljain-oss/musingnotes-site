@@ -207,7 +207,15 @@ a.btn.quiet:hover {
 .ph-dots { display: flex; gap: 4px; margin-top: 7px; }
 .ph-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--d-accent); display: block; flex: none; transition: background .5s ease; }
 .ph-dots i:nth-child(3n) { opacity: .4; }
-.ph-cue { text-align: center; margin: 38px 0 10px; }
+.ph-echo {
+  margin-top: 10px; padding: 11px 13px; border-radius: 14px;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .10);
+}
+.ph-echo .ph-echo-ov { font-size: 8.5px; font-weight: 600; letter-spacing: .14em; color: var(--d-accent); text-transform: uppercase; }
+.ph-echo .ph-echo-t { font-size: 11.5px; color: var(--d-ink); margin-top: 4px; line-height: 1.35; font-style: italic; }
+.ph-echo .ph-echo-m { font-size: 9.5px; color: var(--d-muted); margin-top: 4px; }
+.ph-cue { text-align: center; margin: 28px 0 10px; }
 .ph-cue .ch { color: var(--d-muted); font-size: 12px; line-height: .8; }
 .ph-cue .ct { font-size: 8.5px; letter-spacing: .14em; color: var(--d-muted); margin-top: 3px; font-weight: 600; }
 .ph-capture {
@@ -231,6 +239,73 @@ a.btn.quiet:hover {
   color: var(--d-accent-ink);
 }
 .ph-verbs span.cam { flex: 0 0 34px; color: var(--d-accent); }
+
+/* ── Recall spotlight section ── */
+section.recall-spotlight {
+  background: var(--bg-deep);
+  padding: 84px 0 90px;
+  transition: background .5s ease;
+}
+.recall-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.recall-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background .5s ease, border-color .5s ease;
+}
+.recall-card .tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.recall-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.recall-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--body);
+}
+.recall-visual {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+.recall-visual .badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.recall-visual .quote {
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--ink);
+  margin: 6px 0;
+  line-height: 1.45;
+}
+.recall-visual .meta {
+  font-size: 12px;
+  color: var(--muted);
+}
 
 /* ── Rooms section ── */
 section.rooms {
@@ -703,7 +778,7 @@ footer:not(.site-footer) p { margin: 4px 0; }
   .hero { grid-template-columns: 1fr; gap: 44px; padding: 36px 0 64px; }
   .hero h1 { font-size: 40px; }
   .shelf { grid-template-columns: repeat(2, 1fr); }
-  .cols { grid-template-columns: 1fr; }
+  .cols, .recall-grid { grid-template-columns: 1fr; }
   .faq-wrap { grid-template-columns: 1fr; gap: 30px; }
   .faq h2 { max-width: 18ch; }
   .navlinks a:not(.btn) { display: none; }
@@ -716,10 +791,10 @@ footer:not(.site-footer) p { margin: 4px 0; }
   .swatch { padding: 8px 12px 8px 10px; font-size: 12.5px; }
   .hero .cta { flex-direction: column; align-items: stretch; }
   .hero .cta .btn { text-align: center; }
-  .rooms h2, .grammar h2, .proof h2, .pro-mode h2, .privacy h2, .faq h2, .final-cta h2 { font-size: 32px; }
+  .rooms h2, .grammar h2, .proof h2, .pro-mode h2, .privacy h2, .faq h2, .final-cta h2, .recall-spotlight h2 { font-size: 32px; }
   .section-cta, .final-cta .wrap { align-items: stretch; flex-direction: column; }
   .section-cta .btn, .final-cta .btn { text-align: center; }
-  .query-grid, .privacy-grid, .provider-row { grid-template-columns: 1fr; }
+  .query-grid, .privacy-grid, .provider-row, .recall-grid { grid-template-columns: 1fr; }
   .query-grid { gap: 0; }
 }
 
