@@ -22,16 +22,18 @@ The app repos are the source of truth for design tokens and privacy claims. When
 ```
 public/
 ├── index.html          landing page
-├── privacy.html        the App Store privacy URL — /privacy.html
+├── privacy.html        privacy policy — public URL is /privacy (/privacy.html 301s)
 ├── styles.css          all styles + five-room theme tokens
 ├── theme.js            theme picker, shelf render, localStorage
 ├── blog/               index.html + one .html per post
 ├── mockups/            design explorations, not linked from the live site
 ├── shot-*.jpg          app screenshots used in sections
-├── icon.png            favicon + apple-touch-icon
+├── icon.png            1024 app-icon master (not used as rel=icon)
+├── apple-touch-icon.png  180×180
+├── favicon.ico         16/32/48 ICO
 ├── og-card.png         social preview, exactly 1200×630
-├── sitemap.xml, robots.txt
-└── (repo root) wrangler.toml — [assets] directory = "./public"
+├── sitemap.xml, robots.txt, llms.txt
+└── (repo root) wrangler.toml — assets in ./public + src/worker.js for canonical redirects
 ```
 
 ## Deploy
@@ -45,4 +47,4 @@ To change the site: edit a file in `public/`, commit, push to `main`.
 - **App Store:** `https://apps.apple.com/us/app/musing-notes/id6777539170`
 - **Support:** support@musingnotes.app
 - **Font:** Inter via Google Fonts — preconnect both `fonts.googleapis.com` and `fonts.gstatic.com`
-- Blog URLs are **extensionless** in links and `sitemap.xml` (`/blog/why-folders-kill-your-ideas`) while the files are `.html`. Cloudflare's asset handler resolves this — don't "fix" the links by adding `.html`.
+- Blog URLs are **extensionless** in links and `sitemap.xml` (`/blog/why-folders-kill-your-ideas`) while the files are `.html`. `src/worker.js` 301s `.html` and `/blog` to those canonicals — don't "fix" the links by adding `.html`.

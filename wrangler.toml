@@ -1,8 +1,12 @@
 name = "musingnotes-site"
+main = "src/worker.js"
 compatibility_date = "2026-06-15"
 
-# Static marketing site — no server-side Worker script, just assets.
-# Cloudflare's build runs `npx wrangler deploy`, which reads this file and
-# uploads everything in ./public as the site served at musingnotes.app.
+# Static marketing site plus a tiny Worker that 301s HTTP → HTTPS,
+# www → apex, and .html / /blog → canonical paths before assets.
+# Cloudflare's build runs `npx wrangler deploy`, which reads this file
+# and publishes ./public as the site served at musingnotes.app.
 [assets]
 directory = "./public"
+binding = "ASSETS"
+run_worker_first = true

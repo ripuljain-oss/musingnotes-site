@@ -1,0 +1,21 @@
+# Musing
+
+> Musing is a free, private notes app for iPhone and Mac. Capture text, voice, and photos. Find them later by asking in plain language — on-device, with no folders or tags.
+
+Notes stay on your devices and sync through your own private iCloud. Search, Ask, and understanding run on-device with Apple Intelligence. There are no ads, accounts, subscriptions, or credits. Optional Pro Mode lets you bring your own Perplexity, Anthropic, or OpenAI key for cited web search.
+
+## Pages
+
+- [Home](https://musingnotes.app/): Product overview, how it works, Pro Mode, privacy, FAQ
+- [Privacy policy](https://musingnotes.app/privacy): How notes and data are handled
+- [Journal](https://musingnotes.app/blog/): Notes on noticing, remembering, and thinking on paper
+- [Why we made Musing feel like paper](https://musingnotes.app/blog/why-we-made-musing-feel-like-paper)
+- [How to take notes you never forget](https://musingnotes.app/blog/how-to-take-notes-you-never-forget)
+- [Why folders kill your ideas](https://musingnotes.app/blog/why-folders-kill-your-ideas)
+- [How to remember everything you write down](https://musingnotes.app/blog/how-to-remember-everything-you-write-down)
+- [The best way to take notes on your phone](https://musingnotes.app/blog/best-way-to-take-notes-on-your-phone)
+
+## Optional
+
+- [App Store](https://apps.apple.com/us/app/musing-notes/id6777539170): Download Musing for iPhone and Mac
+- [Support](mailto:support@musingnotes.app)

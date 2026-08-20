@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Privacy Claims Are Load-Bearing
 
-`/privacy.html` is the privacy URL on the App Store listing. Site copy is a compliance surface, not just marketing. Every claim must be true of the shipping app:
+`/privacy` is the public privacy URL (`public/privacy.html`; `/privacy.html` 301s). That `.html` path is still the App Store listing URL. Site copy is a compliance surface, not just marketing. Every claim must be true of the shipping app:
 
 - Free — no ads, no account, no subscription, no credits (all IAP removed from sale as of 4.0)
 - By default, notes never leave the device except to sync through the user's own private iCloud
@@ -16,7 +16,7 @@ alwaysApply: false
 - Every context signal has an off switch
 - App Privacy discloses optional Pro Mode BYOK (Other User Content + Photos for App Functionality, not tracking)
 
-**Never add a claim the app doesn't back.** If a feature changes what leaves the device, `/privacy.html`, the `#privacy` section, and `#pro-mode` on the landing page change in the same commit.
+**Never add a claim the app doesn't back.** If a feature changes what leaves the device, `/privacy`, the `#privacy` section, and `#pro-mode` on the landing page change in the same commit.
 
 One distinction to keep straight: **Pro Mode** (bring-your-own-key web search — Perplexity, Anthropic, or OpenAI — opt-in, off by default) is the single path that sends note text and photos off-device, and only on an explicit user action. It is not the same as capture-time understanding, which is always on-device. Don't blur the two in copy. Lead with provider choice and user-controlled costs when highlighting BYOK.
 
@@ -35,7 +35,7 @@ Current copy covers iPhone and Mac. Keep Universal Purchase language consistent 
 Create `public/blog/<slug>.html`, then three updates or the post is orphaned:
 
 1. A `<li>` in `public/blog/index.html` → `.postlist`, with `.date`, `.title` link, and `.excerpt`
-2. A `<url>` entry in `public/sitemap.xml` with `<lastmod>` and `<priority>0.7</priority>`
+2. A `<url>` entry in `public/sitemap.xml` with the **final** canonical `<loc>` (no `.html`), `<lastmod>`, and `<priority>0.7</priority>`
 3. The post's own `<title>`, `meta description`, and og tags
 
 Link to posts **extensionless**: `/blog/<slug>`, never `/blog/<slug>.html`.
@@ -43,6 +43,10 @@ Link to posts **extensionless**: `/blog/<slug>`, never `/blog/<slug>.html`.
 ## Per-Page Requirements
 
 - `<title>` suffixed `— Musing`, plus a real `meta name="description"`
-- Open Graph: `og:title`, `og:description`, `og:image` (absolute `https://musingnotes.app/og-card.png`), `og:url`
+- `rel="canonical"` on the final public URL (homepage `/` and blog index `/blog/` with trailing slash; posts `/blog/<slug>` and privacy `/privacy` without)
+- Open Graph: `og:type`, `og:site_name`, `og:title`, `og:description`, `og:image` (absolute `https://musingnotes.app/og-card.png`), `og:url` matching the canonical
+- Twitter: `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`
+- Icons: `/favicon.ico` and `/apple-touch-icon.png` (180×180) — not the 1024 `icon.png` master
+- Root-relative `/styles.css` and `/theme.js`
 - `<html lang="en" data-theme="foolscap">`
 - Decorative glyphs (`⚙`, `◉`, `︿`, dot spans) get `aria-hidden="true"`; interactive swatches keep `aria-pressed` and `role="tablist"` on the picker
