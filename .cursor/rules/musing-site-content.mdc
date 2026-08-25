@@ -18,7 +18,7 @@ alwaysApply: false
 
 **Never add a claim the app doesn't back.** If a feature changes what leaves the device, `/privacy`, the `#privacy` section, and `#pro-mode` on the landing page change in the same commit.
 
-One distinction to keep straight: **Pro Mode** (bring-your-own-key web search — Perplexity, Anthropic, or OpenAI — opt-in, off by default) is the single path that sends note text and photos off-device, and only on an explicit user action. It is not the same as capture-time understanding, which is always on-device. Don't blur the two in copy. Lead with provider choice and user-controlled costs when highlighting BYOK.
+One distinction to keep straight: **Pro Mode** (bring-your-own-key web search — OpenAI or Anthropic — opt-in, off by default) is the single path that sends note text and photos off-device, and only on an explicit user action. It is not the same as capture-time understanding, which is always on-device. Don't blur the two in copy. Lead with provider choice and user-controlled costs when highlighting BYOK.
 
 ## Positioning
 
