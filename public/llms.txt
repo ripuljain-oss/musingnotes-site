@@ -2,7 +2,7 @@
 
 > Musing is a free, private notes app for iPhone and Mac. Capture text, voice, and photos. Find them later by asking in plain language — on-device, with no folders or tags.
 
-Notes stay on your devices and sync through your own private iCloud. Search, Ask, and understanding run on-device with Apple Intelligence. There are no ads, accounts, subscriptions, or credits. Optional Pro Mode lets you bring your own OpenAI or Anthropic key for cited web search.
+Notes stay on your devices and sync through your own private iCloud. Search, Ask, and understanding run on-device with Apple Intelligence. There are no ads, accounts, subscriptions, or credits. Optional Pro Mode lets you bring your own OpenAI or Anthropic key for enhanced Ask and cited web search.
 
 ## Pages
 

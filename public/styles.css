@@ -518,11 +518,44 @@ section.grammar { padding: 92px 0 72px; }
   transition: background .5s ease, border-color .5s ease;
 }
 .pro-mode h2 { max-width: 16ch; }
-.provider-row {
+.pro-features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
   margin-top: 36px;
+}
+.pro-feature {
+  padding: 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  transition: background .5s ease, border-color .5s ease;
+}
+.pro-feature .tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.pro-feature h3 {
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.pro-feature p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.provider-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
 }
 .provider {
   padding: 22px 20px;
@@ -794,7 +827,7 @@ footer:not(.site-footer) p { margin: 4px 0; }
   .rooms h2, .grammar h2, .proof h2, .pro-mode h2, .privacy h2, .faq h2, .final-cta h2, .recall-spotlight h2 { font-size: 32px; }
   .section-cta, .final-cta .wrap { align-items: stretch; flex-direction: column; }
   .section-cta .btn, .final-cta .btn { text-align: center; }
-  .query-grid, .privacy-grid, .provider-row, .recall-grid { grid-template-columns: 1fr; }
+  .query-grid, .privacy-grid, .provider-row, .pro-features, .recall-grid { grid-template-columns: 1fr; }
   .query-grid { gap: 0; }
 }
 

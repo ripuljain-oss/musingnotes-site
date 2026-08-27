@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Private notes you can find by asking — Musing</title>
-  <meta name="description" content="Musing is a free, private notes app for iPhone, Mac, and Apple Watch. Place and Time Recall bring back your thoughts when they matter. Ask your notes on-device — or bring your own OpenAI or Anthropic key for cited web search." />
+  <meta name="description" content="Musing is a free, private notes app for iPhone, Mac, and Apple Watch. Place and Time Recall bring back your thoughts when they matter. Ask your notes on-device — or bring your own OpenAI or Anthropic key for enhanced Ask and cited web search." />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,14 +16,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Musing" />
   <meta property="og:title" content="Private notes you can find by asking — Musing" />
-  <meta property="og:description" content="Capture text, voice, photos, and wrist notes. Resurface memories with Place and Time Recall. Free and private on iPhone, Mac, and Apple Watch — with optional bring-your-own-key web search." />
+  <meta property="og:description" content="Capture text, voice, photos, and wrist notes. Resurface memories with Place and Time Recall. Free and private on iPhone, Mac, and Apple Watch — with optional Pro Mode: enhanced Ask and cited web search on your own key." />
   <meta property="og:image" content="https://musingnotes.app/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://musingnotes.app/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Private notes you can find by asking — Musing" />
-  <meta name="twitter:description" content="Capture text, voice, and photos. Find them later without folders or tags. Free and private on iPhone and Mac — with optional bring-your-own-key web search." />
+  <meta name="twitter:description" content="Capture text, voice, and photos. Find them later without folders or tags. Free and private on iPhone and Mac — with optional Pro Mode for enhanced Ask and cited web search on your own key." />
   <meta name="twitter:image" content="https://musingnotes.app/og-card.png" />
   <script type="application/ld+json">
   {
@@ -39,7 +39,7 @@
         "name": "Musing",
         "url": "https://musingnotes.app/",
         "image": "https://musingnotes.app/og-card.png",
-        "description": "Musing is a free, private notes app for iPhone and Mac. Ask your notes on-device — or bring your own OpenAI or Anthropic key for cited web search.",
+        "description": "Musing is a free, private notes app for iPhone and Mac. Ask your notes on-device — or bring your own OpenAI or Anthropic key for enhanced Ask and cited web search.",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "iOS, macOS, watchOS",
         "downloadUrl": "https://apps.apple.com/us/app/musing-notes/id6777539170",
@@ -78,7 +78,7 @@
             "name": "Does anything leave my device?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "By default, no. Note text, photos, and queries stay on-device; Ask and understanding use Apple Intelligence where available. Your private iCloud can sync notes between your devices. Weather uses Apple WeatherKit, and shared links fetch a preview from the website you save. The only optional exception is Pro Mode web search, below."
+              "text": "By default, no. Note text, photos, and queries stay on-device; Ask and understanding use Apple Intelligence where available. Your private iCloud can sync notes between your devices. Weather uses Apple WeatherKit, and shared links fetch a preview from the website you save. The only optional exception is Pro Mode — enhanced Ask and cited web search on your own key — below."
             }
           },
           {
@@ -86,7 +86,7 @@
             "name": "What is Pro Mode?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Bring your own AI service. Turn on Pro Mode, paste your own OpenAI or Anthropic API key, and ask Musing to look something up on the web — from a note, from Ask, or while writing. You choose the provider and control its costs. Only that requested lookup is sent, with cited sources returned. Off by default; nothing is sold inside Musing."
+              "text": "Bring your own AI service. Turn on Pro Mode, paste your own OpenAI or Anthropic API key, and use it for two things you tap: richer Ask answers from your matching notes, and cited web search when your notes are not enough — from Ask, from a note, or while writing. You choose the provider and control its costs. Off by default; nothing is sold inside Musing."
             }
           },
           {
@@ -141,7 +141,7 @@
       <p class="lede">Capture a thought, voice memo, or photo in seconds. Musing keeps the moment —
         place, weather, time — and brings notes back when you return to a place or reach an anniversary.
         No folders, no tags. Free on iPhone, Mac, and Apple Watch. Optional Pro Mode: bring your own
-        OpenAI or Anthropic key for cited web search — you choose the provider and control the costs.</p>
+        OpenAI or Anthropic key for enhanced Ask and cited web search — you choose the provider and control the costs.</p>
       <div class="cta">
         <a class="btn" href="https://apps.apple.com/us/app/musing-notes/id6777539170">Download on the App&nbsp;Store</a>
         <a class="btn quiet" href="#grammar">See how it works</a>
@@ -271,24 +271,37 @@
   <div class="wrap">
     <div class="overline">Bring your own AI service</div>
     <h2 id="pro-mode-title">Your key. Your provider. Your costs.</h2>
-    <p class="sub">Pro Mode adds one optional thing: cited web search. Connect your own API key,
-      choose the model, and keep usage under your control. Reading and understanding your notes
-      still happen on your device.</p>
+    <p class="sub">Pro Mode is optional and off by default. Connect your own API key for two things you
+      tap — richer Ask from your matching notes, and cited web search when your notes are not enough.
+      Capture, recall, and everyday search stay on your device.</p>
+
+    <div class="pro-features" aria-label="What Pro Mode adds">
+      <div class="pro-feature">
+        <div class="tag">Ask your notes</div>
+        <h3>Enhanced search across your library</h3>
+        <p>Musing finds the relevant notes on-device, then your provider composes a grounded answer with citations — richer than Apple Intelligence alone.</p>
+      </div>
+      <div class="pro-feature">
+        <div class="tag">Web search</div>
+        <h3>Cited lookups when notes fall short</h3>
+        <p>From Ask or a note, search the web with your key. Sources come back as tappable links beside the answer.</p>
+      </div>
+    </div>
 
     <div class="provider-row" aria-label="Supported providers">
       <div class="provider">
         <strong>OpenAI</strong>
-        <span>GPT with live web search — recommended</span>
+        <span>GPT for Ask + live web search — recommended</span>
       </div>
       <div class="provider">
         <strong>Anthropic</strong>
-        <span>Claude with live web search</span>
+        <span>Claude for Ask + live web search</span>
       </div>
     </div>
 
     <ul class="pro-points">
-      <li>Off by default — nothing leaves your device until you ask for a lookup.</li>
-      <li>Only that note’s text and any photos on it are sent to the provider you chose.</li>
+      <li>Off by default — nothing leaves your device until you Ask with Pro Mode or request a web lookup.</li>
+      <li>Ask sends only matching notes; web search sends only that note’s text and any photos on it — never your whole library.</li>
       <li>Keys stay in your device Keychain. Musing never sees them, and nothing is sold inside the app.</li>
     </ul>
   </div>
@@ -335,7 +348,7 @@
       <div><strong>Stored with you</strong><span>Notes live on your devices and sync through your own private iCloud.</span></div>
       <div><strong>Understood on-device</strong><span>Search, Ask, Place and Time Recall, transcription, and photo understanding use Apple’s on-device frameworks.</span></div>
       <div><strong>You control context</strong><span>Every context signal has an off switch. Sensitive places (hospitals, clinics, places of worship) are never named or notified.</span></div>
-      <div><strong>Bring your own key</strong><span>Optional Pro Mode uses your OpenAI or Anthropic key for cited web search — only when you ask. You choose the provider and control its costs.</span></div>
+      <div><strong>Bring your own key</strong><span>Optional Pro Mode uses your OpenAI or Anthropic key for enhanced Ask and cited web search — only when you tap. You choose the provider and control its costs.</span></div>
     </div>
     <a class="privacy-link" href="/privacy">Read the privacy policy →</a>
   </div>
@@ -375,15 +388,14 @@
         <p>By default, no. Note text, photos, and queries stay on-device; Ask and understanding
           use Apple Intelligence where available. Your private iCloud can sync notes between
           your devices. Weather uses Apple WeatherKit, and shared links fetch a preview from
-          the website you save. The only optional exception is Pro Mode web search, below.</p>
+          the website you save. The only optional exception is Pro Mode — enhanced Ask and cited web search on your own key — below.</p>
       </details>
       <details>
         <summary>What is Pro Mode?</summary>
         <p>Bring your own AI service. Turn on Pro Mode, paste your own OpenAI or Anthropic
-          API key, and ask Musing to look something up on the web — from a note,
-          from Ask, or while writing. You choose the provider and control its costs. Only that
-          requested lookup is sent, with cited sources returned. Off by default; nothing is
-          sold inside Musing.</p>
+          API key, and use it for two things you tap: richer Ask answers from your matching notes,
+          and cited web search when your notes are not enough — from Ask, from a note, or while writing.
+          You choose the provider and control its costs. Off by default; nothing is sold inside Musing.</p>
       </details>
       <details>
         <summary>Does it work on Mac and Apple Watch?</summary>
